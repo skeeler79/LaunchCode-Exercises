@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Events</title>
-    <th:block th:each = "event:${events}">
-        <ul>
-            <li th:text = "${event}"></li>
-        </ul>
-    </th:block>
+
 </head>
 <body>
+<h1>All Events</h1>
+<p th:unless="${events} and ${events.size()}">No Events!</p>
+<ul>
+    <th:block th:each="event : ${events}">
+        <li th:text="${event}"></li>
+    </th:block>
+</ul>
 
 </body>
 </html>
+
